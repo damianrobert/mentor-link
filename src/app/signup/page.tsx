@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Button from "@/components/button";
 
 export default function Signup() {
   return (
@@ -25,9 +26,8 @@ export default function Signup() {
           type="password"
           placeholder="Password"
         />
-        <button className="bg-zinc-100 w-full rounded-md p-1 text-slate-800 font-bold text-lg mb-6 tracking-widest">
-          SUBMIT
-        </button>
+        <Button name="SUBMIT" >
+        </Button>
 
         <Link href="/" className="text-white hover:font-bold">
           👉 Go to sign in
