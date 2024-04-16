@@ -12,9 +12,9 @@ export default function Home() {
     password: '',
   });
 
-  useEffect(() => {
+  /*useEffect(() => {
     setUser({ email: '', password: '' });
-  }, []);
+  }, []);*/
 
   return (
     <div className='min-h-screen bg-slate-800 text-zinc-300 flex flex-col justify-center items-center'>

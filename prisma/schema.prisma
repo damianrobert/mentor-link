@@ -9,9 +9,9 @@ datasource db {
 
 model User {
   id        Int    @id @default(autoincrement())
-  firstName String @map("FirstName") @db.VarChar(20)
-  lastName  String @map("LastName") @db.VarChar(20)
-  email     String @map("Email") @db.VarChar(40)
-  password  String @map("Password") @db.VarChar(25)
-  username  String @map("Username") @db.VarChar(30)
+  firstName String @map(name: "FirstName") @db.VarChar(20)
+  lastName  String @map(name: "LastName") @db.VarChar(20)
+  email     String @unique @map(name: "Email") @db.VarChar(40)
+  password  String @map(name: "Password") @db.VarChar(25)
+  username  String @map(name: "Username") @db.VarChar(30)
 }
