@@ -8,27 +8,20 @@ import { Input } from "@/components/ui/input";
 import { UserButton } from "@clerk/nextjs";
 
 export default function Home() {
-  const [user, setUser] = useState({
-    email: "",
-    password: "",
-  });
-
-  /*useEffect(() => {
-    setUser({ email: '', password: '' });
-  }, []);*/
+  const [open, setOpen] = useState(false);
 
   return (
-    <div className="min-h-screen bg-slate-800 text-zinc-300 flex flex-col justify-center items-center">
-      <UserButton />
-      <h1>LANDING PAGE</h1>
-      <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error nesciunt
-        aspernatur provident. Nostrum, pariatur! Inventore eos magnam,
-        exercitationem blanditiis cumque, voluptate molestiae architecto
-        distinctio optio quia quae porro et quod sit sed tenetur modi ratione
-        aliquid. Voluptatem, nobis. Sapiente laudantium saepe error eveniet
-        facilis sint illum repellat optio odio sunt.
-      </p>
+    <div className="min-h-screen bg-zinc-200 text-slate-600 flex flex-col justify-center items-center relative">
+      <div className="">
+        <UserButton />
+      </div>
+
+      <div className="absolute top-[2rem] ">
+        <div className="flex text-[6rem] font-bold">
+          <p className="text-[#4490db]">Mentor</p>
+          <p className="text-[#44cb8c]">Link</p>
+        </div>
+      </div>
     </div>
   );
 }
