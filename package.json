@@ -9,14 +9,16 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@clerk/nextjs": "^4.29.12",
-    "@clerk/themes": "^2.1.6",
-    "@prisma/client": "^5.12.0",
+    "axios": "^1.7.2",
+    "bcryptjs": "^2.4.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
-    "convex": "^1.12.0",
+    "jsonwebtoken": "^9.0.2",
     "lucide-react": "^0.368.0",
+    "mongodb": "^6.6.2",
+    "mongoose": "^8.4.0",
     "next": "^14.1.4",
+    "nodemailer": "^6.9.13",
     "react": "^18",
     "react-dom": "^18",
     "tailwind-merge": "^2.2.2",
@@ -24,15 +26,15 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "^20.12.12",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "autoprefixer": "^10.0.1",
     "eslint": "^8",
     "eslint-config-next": "14.1.4",
     "postcss": "^8",
-    "prisma": "^5.12.0",
     "tailwindcss": "^3.3.0",
+    "ts-node": "^10.9.2",
     "typescript": "^5"
   }
 }
