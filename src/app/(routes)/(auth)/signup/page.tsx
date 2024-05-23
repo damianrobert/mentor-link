@@ -7,15 +7,7 @@ import { z } from 'zod';
 import axios from 'axios';
 import { Button } from '@/components/ui/button';
 import { useForm } from 'react-hook-form';
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from '@/components/ui/form';
+
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Input } from '@/components/ui/input';
 
@@ -89,11 +81,10 @@ function SignupPage() {
   }, [user]);
 
   return (
-    <div className=''>
+    <div>
       <div className='flex flex-col justify-around bg-zinc-300 p-6 rounded-md'>
         <div className='my-2'>
-          <input
-            className='w-full rounded-md p-2'
+          <Input
             type='text'
             placeholder='First Name'
             value={user.firstName}
@@ -102,8 +93,7 @@ function SignupPage() {
         </div>
 
         <div className='my-2'>
-          <input
-            className='w-full rounded-md p-2'
+          <Input
             type='text'
             placeholder='Last Name'
             value={user.lastName}
@@ -112,8 +102,7 @@ function SignupPage() {
         </div>
 
         <div className='my-2'>
-          <input
-            className='w-full rounded-md p-2'
+          <Input
             type='email'
             placeholder='Email'
             value={user.email}
@@ -122,26 +111,24 @@ function SignupPage() {
         </div>
 
         <div className='my-2'>
-          <input
-            className='w-full rounded-md p-2'
+          <Input
             type='Password'
-            placeholder='password'
+            placeholder='Password'
             value={user.password}
             onChange={(e) => setUser({ ...user, password: e.target.value })}
           />
         </div>
 
         <div className='my-2'>
-          <input
-            className='w-full rounded-md p-2'
+          <Input
             type='text'
-            placeholder='username'
+            placeholder='Username'
             value={user.username}
             onChange={(e) => setUser({ ...user, username: e.target.value })}
           />
         </div>
         <Button onClick={onSignup}>
-          {buttonDisabled ? 'Fill in the fileds' : 'Signup'}
+          {buttonDisabled ? 'Fill in the fields' : 'Signup'}
         </Button>
         <p className='w-fit mx-auto my-2'>{loading ? ' Processing...' : ''}</p>
         <Link href='/login'>Already have an account? Login</Link>

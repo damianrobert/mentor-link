@@ -8,7 +8,7 @@ connect();
 export async function POST(request: NextRequest) {
   try {
     const reqBody = await request.json();
-    const { firstName, lastName, username, email, passsword } = reqBody;
+    const { firstName, lastName, username, email, password } = reqBody;
     //TODO: validate the request body
 
     //check if the user already exists
@@ -22,7 +22,7 @@ export async function POST(request: NextRequest) {
 
     //hash the password
     const salt = await bcryptjs.genSalt(10);
-    const hashedPassword = await bcryptjs.hash(passsword, salt);
+    const hashedPassword = await bcryptjs.hash(password, salt);
 
     //create a new user
     const newUser = new User({
@@ -30,17 +30,19 @@ export async function POST(request: NextRequest) {
       lastName,
       username,
       email,
-      passsword: hashedPassword,
+      password: hashedPassword,
     });
 
     //save the user to the database
     const savedUser = await newUser.save();
 
-    return NextResponse.json({
+    const response: NextResponse = NextResponse.json({
       message: 'User created successfully',
       success: true,
       savedUser,
     });
+
+    return response;
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 });
   }
