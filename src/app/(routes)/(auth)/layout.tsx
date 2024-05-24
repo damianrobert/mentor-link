@@ -1,9 +1,11 @@
+'use client';
+
 import React from 'react';
 
 function AuthLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className='min-h-screen bg-slate-800 flex w-screen'>
-      <div className='hidden md:block min-h-screen bg-zinc-100  md:w-3/5'>
+      <div className='hidden md:flex min-h-screen bg-zinc-100  md:w-3/5'>
         TODO add a logo*
       </div>
 

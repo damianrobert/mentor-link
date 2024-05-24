@@ -3,7 +3,10 @@ import type { NextRequest } from 'next/server';
 
 export function middleware(request: NextRequest) {
   const path = request.nextUrl.pathname;
-  const isPublicPath = path === '/login' || path === '/signup';
+
+  //paths that don't require authentication
+  const isPublicPath =
+    path === '/login' || path === '/signup' || path === '/verifyemail';
   const token = request.cookies.get('token')?.value || '';
 
   if (isPublicPath && token) {
@@ -16,5 +19,12 @@ export function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/', '/profile', '/profile/:path*', '/login', '/signup'],
+  matcher: [
+    '/',
+    '/profile',
+    '/profile/:path*',
+    '/login',
+    '/signup',
+    '/verifyemail',
+  ],
 };
