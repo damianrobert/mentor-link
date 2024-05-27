@@ -13,7 +13,6 @@ export default function VerifyEmailPage() {
     try {
       await axios.post('/api/users/verifyemail', { token });
       setVerified(true);
-      console.log('user is verified: ' + verified);
     } catch (error: any) {
       setError(true);
       console.log(error.response.data);
@@ -45,6 +44,8 @@ export default function VerifyEmailPage() {
             </Link>
           </div>
         )}
+
+        <Link href='/login'>Go to Login</Link>
 
         {error && (
           <div>

@@ -131,7 +131,9 @@ function SignupPage() {
           {buttonDisabled ? 'Fill in the fields' : 'Signup'}
         </Button>
         <p className='w-fit mx-auto my-2'>{loading ? ' Processing...' : ''}</p>
-        <Link href='/login'>Already have an account? Login</Link>
+        <Link href='/login'>
+          Already have an account? <p className='underline inline'>Login</p>
+        </Link>
       </div>
     </div>
   );

@@ -66,7 +66,10 @@ function LoginPage() {
           {buttonDisabled ? 'Fill in the fields' : 'Login'}
         </Button>
         <p className='w-fit mx-auto my-2'>{loading ? ' Processing...' : ''}</p>
-        <Link href='/signup'>Don't have an account? Go to signup page</Link>
+        <Link href='/signup'>
+          Don't have an account? Go to{' '}
+          <p className='underline inline'>signup</p> page
+        </Link>
       </div>
     </div>
   );

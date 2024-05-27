@@ -7,6 +7,7 @@ export function middleware(request: NextRequest) {
   //paths that don't require authentication
   const isPublicPath =
     path === '/login' || path === '/signup' || path === '/verifyemail';
+
   const token = request.cookies.get('token')?.value || '';
 
   if (isPublicPath && token) {

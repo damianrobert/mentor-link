@@ -23,9 +23,14 @@ function ProfilePage() {
 
   const getUserDetails = async () => {
     const response = await axios.get('/api/users/me');
-    console.log(response.data.data);
-    setUserData(response.data.data);
+    await setUserData(response.data.data);
+
+    router.push(`/profile/${response.data.data.username}`);
   };
+
+  React.useEffect(() => {
+    getUserDetails();
+  }, []);
 
   return (
     <div>
@@ -37,13 +42,9 @@ function ProfilePage() {
           id:{' ' + userData.username}
         </Link>
       )}
-      <p>firstNme: {' ' + userData.firstName}</p>
-      <p>lastName: {' ' + userData.lastName}</p>
 
       <div>
         <Button onClick={logout}>Logout</Button>
-
-        <Button onClick={getUserDetails}>Get Details</Button>
       </div>
     </div>
   );

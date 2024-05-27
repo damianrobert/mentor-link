@@ -31,6 +31,16 @@ const userSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  roles: {
+    mentee: {
+      type: Boolean,
+      default: true,
+    },
+    mentor: {
+      type: Boolean,
+      default: false,
+    },
+  },
   forgotPasswordToken: String,
   forgotPasswordExpiry: Date,
   verifyToken: String,
