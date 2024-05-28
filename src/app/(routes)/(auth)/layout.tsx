@@ -1,15 +1,18 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import sideLogo from '@/../Images/logo.webp';
+import { BrainCircuit } from 'lucide-react';
 
 function AuthLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <div className='min-h-screen bg-slate-800 flex w-screen'>
-      <div className='hidden md:flex min-h-screen bg-zinc-100  md:w-3/5'>
-        <div className='bg-contain bg-no-repeat bg-center'>
-          <Image src={sideLogo} alt='Background Image' />
+      <div className='hidden md:flex justify-center items-center min-h-screen bg-zinc-100  md:w-3/5 bg-gradient-to-r from-[#3b6592] to-[#47a13d] '>
+        <div className='text-5xl mr-4 font-semibold tracking-wide'>
+          <div className='inline'>Mentor</div>
+          <div className='inline text-white'>Link</div>
+        </div>
+        <div>
+          <BrainCircuit size={100} />
         </div>
       </div>
 

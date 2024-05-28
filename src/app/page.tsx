@@ -1,15 +1,12 @@
 'use client';
 
-import Button from '@/components/button';
-import Link from 'next/link';
-import { UserType } from '@/types/userType';
-import { useState, useEffect } from 'react';
-import { Input } from '@/components/ui/input';
+import React from 'react';
+import NavBar from '@/components/client/NavBar';
 
 export default function Home() {
-  const [open, setOpen] = useState(false);
-
   return (
-    <div className='min-h-screen bg-zinc-200 text-slate-600 flex flex-col justify-center items-center relative'></div>
+    <div className='min-h-screen bg-zinc-100 text-slate-600 justify-center items-center relative'>
+      <NavBar />
+    </div>
   );
 }

@@ -43,31 +43,43 @@ function UserProfilePage({ params }: any) {
 
   useEffect(() => {
     getUserDetails();
-    console.log(mentor, mentee);
   }, []);
 
   return (
-    <div className='min-h-screen flex items-center justify-center'>
+    <div className='min-h-screen '>
       <NavBar />
       <div className='bg-zinc-100 p-8 rounded-md'>
-        <h1 className='text-4xl p-1'>Profile Page</h1>
-
-        <div className='p-2'>
-          <div className='w-fit rounded-full p-2 mx-auto border-2 border-black bg-gray-300'>
-            <UserRound size={64} />
-          </div>
-          <p>Username: {userData.username}</p>
-          <p>Email: {userData.email}</p>
-
-          <p>
-            Roles: {roles.mentee === true ? 'Mentee' : ''}
-            {roles.mentor === true ? ', Mentor' : ''}
-          </p>
-
-          <div className='w-fit mx-auto my-2'>
-            <Button onClick={logout}>Logout</Button>
-          </div>
+        <h1 className='text-4xl p-1 w-fit mx-auto'>Profile Page</h1>
+        <div className='flex justify-between'>
           <div>
+            <div className='p-2'>
+              <p>Username: {userData.username}</p>
+              <p>Email: {userData.email}</p>
+
+              <p>
+                Roles: {roles.mentee === true ? 'Mentee' : ''}
+                {roles.mentor === true ? ', Mentor' : ''}
+              </p>
+
+              {userData.isAdmin === true ? (
+                <p className='text-red-600 font-bold'>This user is Admin</p>
+              ) : (
+                ''
+              )}
+            </div>
+          </div>
+
+          <div>
+            <div className='w-fit rounded-full p-2 mx-auto mb-6 border-2 border-black bg-gray-300'>
+              <UserRound size={64} />
+            </div>
+
+            <div className='w-fit mx-auto my-2'>
+              <Button onClick={logout}>Logout</Button>
+            </div>
+          </div>
+
+          <div className={`${userData.isVerified === true ? 'hidden' : ''}`}>
             {userData.isVerified === false ? (
               <div className='inline'>
                 Your email is not verified. Click{' '}
